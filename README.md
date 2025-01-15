@@ -4,21 +4,6 @@ Ce système RAG (Retrieval-Augmented Generation) est conçu pour traiter et rép
 
 Voici un fichier `README.md` bien structuré pour votre projet RAG (Retrieval-Augmented Generation) :  
 
-```markdown
-# RAG Chatbot - Retrieval-Augmented Generation for PDF Documents
-
-
-## Description
-
-Le **RAG Chatbot** est une application interactive permettant de répondre à des questions en utilisant le contenu d'un document PDF fourni par l'utilisateur. Grâce à une combinaison de modèles d'apprentissage automatique et de pipelines d'ingestion de données, le chatbot analyse les documents, extrait les informations pertinentes et génère des réponses naturelles.
-
-### Fonctionnalités :
-- **Chargement de PDF** : Chargez un document PDF via une interface conviviale.
-- **Questions personnalisées** : Posez des questions spécifiques sur le contenu du document.
-- **Génération de réponses** : Obtenez des réponses précises grâce à un modèle de langage avancé.
-- **Utilisation de Gradio** : Interface utilisateur simple et intuitive pour interagir avec le chatbot.
-
-
 graph TB
     subgraph "Phase 1: Document Processing"
         A[PDF Document] --> B[Document Loader]
@@ -50,6 +35,21 @@ graph TB
     style G fill:#f9f,stroke:#333
     style M fill:#bfb,stroke:#333
     style F fill:#bbf,stroke:#333
+
+
+```markdown
+# RAG Chatbot - Retrieval-Augmented Generation for PDF Documents
+
+
+## Description
+
+Le **RAG Chatbot** est une application interactive permettant de répondre à des questions en utilisant le contenu d'un document PDF fourni par l'utilisateur. Grâce à une combinaison de modèles d'apprentissage automatique et de pipelines d'ingestion de données, le chatbot analyse les documents, extrait les informations pertinentes et génère des réponses naturelles.
+
+### Fonctionnalités :
+- **Chargement de PDF** : Chargez un document PDF via une interface conviviale.
+- **Questions personnalisées** : Posez des questions spécifiques sur le contenu du document.
+- **Génération de réponses** : Obtenez des réponses précises grâce à un modèle de langage avancé.
+- **Utilisation de Gradio** : Interface utilisateur simple et intuitive pour interagir avec le chatbot.
 
 ---
 
