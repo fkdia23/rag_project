@@ -4,15 +4,5 @@ services:
     build: .
     ports:
       - "7861:7861"
-    volumes:
-      - ./data:/app/data
-      - ./db:/app/db
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
     environment:
       - NVIDIA_VISIBLE_DEVICES=all
