@@ -87,6 +87,30 @@ Une scalabilité du système
 
 ### Étapes d'installation :
 
+1. Construisez l'image Docker :
+    
+    ```bash
+    docker compose build 
+    ```
+![alt text](image-1.png)
+
+2. Lancez le conteneur avec Docker Compose :
+    
+    ```bash
+    docker compose up
+    ```
+![alt text](image-2.png)
+3. Accédez à l'application dans votre navigateur à l'adresse suivante :
+    
+    ```
+    http://localhost:7861
+    ```
+    
+
+---
+
+
+### SANS DOCKER
 1. Clonez ce dépôt :
    ```bash
    git clone https://github.com/votre-utilisateur/votre-repo.git
