@@ -23,23 +23,6 @@ import warnings
 warnings.warn = warn
 warnings.filterwarnings('ignore')
 
-# ## LLM
-# def get_llm():
-#     model_id = 'mistralai/mixtral-8x7b-instruct-v01'
-#     parameters = {
-#         GenParams.MAX_NEW_TOKENS: 256,
-#         GenParams.TEMPERATURE: 0.5,
-#     }
-#     project_id = "skills-network"
-#     watsonx_llm = WatsonxLLM(
-#         model_id=model_id,
-#         url="https://us-south.ml.cloud.ibm.com",
-#         apikey="azE6dXNyXzcxMWIxMjUxLWYwMGEtM2ZiNC05NWEyLTkzOTIyNmY0NmFmYjpSb0dzZmlHaCs3bmFvZklNM0luWlp0R3hxbHdIY3pDcVpmbUFpTTFBL0dRPTpqWHBC",
-#         project_id=project_id,
-#         params=parameters,
-#     )
-#     return watsonx_llm
-
 def get_llm():
     """
     Initialize and return the language model
@@ -87,12 +70,12 @@ def text_splitter(data):
 
 ## Vector db
 def vector_database(chunks):
-    embedding_model = watsonx_embedding()
+    embedding_model = get_embeddings()
     vectordb = Chroma.from_documents(chunks, embedding_model)
     return vectordb
 
 ## Embedding model
-def watsonx_embedding():
+def get_embeddings():
     model_name = "sentence-transformers/all-MiniLM-L6-v2"
     model_kwargs = {'device': 'cpu'}
         
