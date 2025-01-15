@@ -21,6 +21,7 @@ Le **RAG Chatbot** est une application interactive permettant de répondre à de
 ---
 
 ## Architecture
+```
 project_root/
 ├── app/
 │   ├── __init__.py
@@ -30,7 +31,7 @@ project_root/
 ├── docker-compose.yml
 ├── requirements.txt
 └── README.md
-
+```
 ### Étapes principales :
 1. **Chargement du document** : Le fichier PDF est chargé et analysé avec `PyPDFLoader`.
 2. **Division du texte** : Le contenu est segmenté en chunks pour un traitement efficace à l'aide de `RecursiveCharacterTextSplitter`.
@@ -40,34 +41,34 @@ project_root/
 6. **Interface utilisateur** : Une application Gradio permet de charger des PDF et de poser des questions directement.
 
 Le schéma montre les 4 phases principales du système RAG :
+![alt text](<Untitled diagram-2025-01-15-163120.png>)
 
-Phase de Traitement du Document
+1- Phase de Traitement du Document
 
-Le PDF est chargé via le Document Loader
-Le texte est découpé en chunks via le Text Splitter
-Les chunks maintiennent un chevauchement pour préserver le contexte
-
-
-Phase d'Embedding et Stockage
-
-Chaque chunk est converti en vecteur par le modèle d'embedding
-Les vecteurs sont stockés dans la base de données vectorielle
-Cette phase prépare les données pour la recherche rapide
+    Le PDF est chargé via le Document Loader
+    Le texte est découpé en chunks via le Text Splitter
+    Les chunks maintiennent un chevauchement pour préserver le contexte
 
 
-Phase de Traitement des Requêtes
+2- Phase d'Embedding et Stockage
 
-La question de l'utilisateur est convertie en vecteur
-Une recherche de similarité est effectuée
-Les chunks les plus pertinents sont récupérés
+    Chaque chunk est converti en vecteur par le modèle d'embedding
+    Les vecteurs sont stockés dans la base de données vectorielle
+    Cette phase prépare les données pour la recherche rapide
 
 
-Phase de Génération de Réponse
+3- Phase de Traitement des Requêtes
 
-Les chunks pertinents sont assemblés en contexte
-Le contexte et la question sont envoyés au LLM
-Le LLM génère une réponse basée sur ce contexte
+    La question de l'utilisateur est convertie en vecteur
+    Une recherche de similarité est effectuée
+    Les chunks les plus pertinents sont récupérés
 
+
+4- Phase de Génération de Réponse
+
+    Les chunks pertinents sont assemblés en contexte
+    Le contexte et la question sont envoyés au LLM
+    Le LLM génère une réponse basée sur ce contexte
 
 
 Cette architecture permet :
