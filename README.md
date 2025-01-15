@@ -4,40 +4,7 @@ Ce système RAG (Retrieval-Augmented Generation) est conçu pour traiter et rép
 
 Voici un fichier `README.md` bien structuré pour votre projet RAG (Retrieval-Augmented Generation) :  
 
-graph TB
-    subgraph "Phase 1: Document Processing"
-        A[PDF Document] --> B[Document Loader]
-        B --> C[Text Splitter]
-        C --> |Chunks| D[Chunked Text]
-    end
 
-    subgraph "Phase 2: Embedding & Storage"
-        D --> E[Embedding Model]
-        E --> |Vectors| F[Vector Database]
-    end
-
-    subgraph "Phase 3: Query Processing"
-        G[User Query] --> H[Query Embedding]
-        H --> I[Vector Similarity Search]
-        F --> I
-        I --> J[Relevant Chunks]
-    end
-
-    subgraph "Phase 4: Response Generation"
-        J --> K[Context Assembly]
-        G --> K
-        K --> L[LLM]
-        L --> M[Generated Response]
-    end
-
-    %% Styling
-    style A fill:#f9f,stroke:#333
-    style G fill:#f9f,stroke:#333
-    style M fill:#bfb,stroke:#333
-    style F fill:#bbf,stroke:#333
-
-
-```markdown
 # RAG Chatbot - Retrieval-Augmented Generation for PDF Documents
 
 
@@ -228,6 +195,5 @@ bashCopy# Vérifier la version SQLite dans Python
 python3 -c "import sqlite3; print(sqlite3.sqlite_version)"
 
 
-```
 
 
