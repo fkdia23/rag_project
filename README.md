@@ -7,6 +7,7 @@ Voici un fichier `README.md` bien structuré pour votre projet RAG (Retrieval-Au
 ```markdown
 # RAG Chatbot - Retrieval-Augmented Generation for PDF Documents
 
+
 ## Description
 
 Le **RAG Chatbot** est une application interactive permettant de répondre à des questions en utilisant le contenu d'un document PDF fourni par l'utilisateur. Grâce à une combinaison de modèles d'apprentissage automatique et de pipelines d'ingestion de données, le chatbot analyse les documents, extrait les informations pertinentes et génère des réponses naturelles.
@@ -17,26 +18,6 @@ Le **RAG Chatbot** est une application interactive permettant de répondre à de
 - **Génération de réponses** : Obtenez des réponses précises grâce à un modèle de langage avancé.
 - **Utilisation de Gradio** : Interface utilisateur simple et intuitive pour interagir avec le chatbot.
 
----
-
-## Architecture
-project_root/
-├── app/
-│   ├── __init__.py
-│   ├── Qabot.py
-├── .gitignore
-├── Dockerfile
-├── docker-compose.yml
-├── requirements.txt
-└── README.md
-
-### Étapes principales :
-1. **Chargement du document** : Le fichier PDF est chargé et analysé avec `PyPDFLoader`.
-2. **Division du texte** : Le contenu est segmenté en chunks pour un traitement efficace à l'aide de `RecursiveCharacterTextSplitter`.
-3. **Création de la base vectorielle** : Les chunks sont convertis en vecteurs avec `sentence-transformers/all-MiniLM-L6-v2` et stockés dans une base Chroma.
-4. **Récupération des informations** : Les requêtes de l'utilisateur sont comparées aux vecteurs pour retrouver les passages pertinents.
-5. **Génération de réponses** : Un modèle de langage basé sur `unsloth/Llama-3.2-1B-Instruct` génère des réponses à partir des passages récupérés.
-6. **Interface utilisateur** : Une application Gradio permet de charger des PDF et de poser des questions directement.
 
 graph TB
     subgraph "Phase 1: Document Processing"
@@ -69,6 +50,27 @@ graph TB
     style G fill:#f9f,stroke:#333
     style M fill:#bfb,stroke:#333
     style F fill:#bbf,stroke:#333
+
+---
+
+## Architecture
+project_root/
+├── app/
+│   ├── __init__.py
+│   ├── Qabot.py
+├── .gitignore
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+└── README.md
+
+### Étapes principales :
+1. **Chargement du document** : Le fichier PDF est chargé et analysé avec `PyPDFLoader`.
+2. **Division du texte** : Le contenu est segmenté en chunks pour un traitement efficace à l'aide de `RecursiveCharacterTextSplitter`.
+3. **Création de la base vectorielle** : Les chunks sont convertis en vecteurs avec `sentence-transformers/all-MiniLM-L6-v2` et stockés dans une base Chroma.
+4. **Récupération des informations** : Les requêtes de l'utilisateur sont comparées aux vecteurs pour retrouver les passages pertinents.
+5. **Génération de réponses** : Un modèle de langage basé sur `unsloth/Llama-3.2-1B-Instruct` génère des réponses à partir des passages récupérés.
+6. **Interface utilisateur** : Une application Gradio permet de charger des PDF et de poser des questions directement.
 
 Le schéma montre les 4 phases principales du système RAG :
 
@@ -178,8 +180,6 @@ Une scalabilité du système
 Si nécessaire, modifiez les ports ou d'autres paramètres dans le fichier `app.py` :
 - **Port par défaut** : `7861`
 - **Adresse serveur** : `0.0.0.0`
-
----
 
 ---
 
