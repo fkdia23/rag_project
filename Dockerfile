@@ -1,23 +1,28 @@
+# Use NVIDIA CUDA base image
 FROM nvidia/cuda:11.8.0-runtime-ubuntu22.04
 
 # Set working directory
-WORKDIR /
+WORKDIR /app
 
-# Install Python and pip
+# Install system dependencies
 RUN apt-get update && apt-get install -y \
-    python3.10 \
     python3-pip \
+    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements and install dependencies
+# Copy requirements file
 COPY requirements.txt .
+
+# Install Python dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # Copy application code
-COPY . .
+COPY app/ ./app/
 
-# Expose port
-EXPOSE 8000
+# Set environment variables
+ENV PYTHONUNBUFFERED=1
+ENV GRADIO_SERVER_NAME=0.0.0.0
+ENV GRADIO_SERVER_PORT=7861
 
 # Run the application
-CMD ["python3", "-m", "qabot.py"]
+CMD ["python3", "app/qabot.py"]
