@@ -4,4 +4,4 @@
 source venv/bin/activate
 
 # Lancement de l'application
-python3 app/qabot.py
+python3 app/main.py

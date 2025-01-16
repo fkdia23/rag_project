@@ -87,14 +87,20 @@ Une scalabilité du système
 
 ### Étapes d'installation :
 
-1. Construisez l'image Docker :
+1. Clonez ce dépôt :
+   ```bash
+   git clone https://github.com/fkdia23/rag_project.git
+   cd rag_project
+   ```
+
+2. Construisez l'image Docker :
     
     ```bash
     docker compose build 
     ```
 ![alt text](image-1.png)
 
-2. Lancez le conteneur avec Docker Compose :
+3. Lancez le conteneur avec Docker Compose :
     
     ```bash
     docker compose up
@@ -113,8 +119,8 @@ Une scalabilité du système
 ### SANS DOCKER
 1. Clonez ce dépôt :
    ```bash
-   git clone https://github.com/votre-utilisateur/votre-repo.git
-   cd votre-repo
+   git clone https://github.com/fkdia23/rag_project.git
+   cd rag_project
    ```
 
 2. Créez un environnement virtuel :
